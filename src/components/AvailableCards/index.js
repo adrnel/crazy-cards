@@ -13,16 +13,14 @@ class AvailableCards extends Component {
   }
 
   seeDetailsButton() {
-    this.setState((prevState) => {
-      prevState.isSelected = true;
-      return prevState;
+    this.setState(() => {
+      return {isSelected: true};
     })
   }
 
   back() {
-    this.setState((prevState) => {
-      prevState.isSelected = false;
-      return prevState;
+    this.setState(() => {
+      return {isSelected: false}
     })
   }
 
@@ -44,9 +42,6 @@ class AvailableCards extends Component {
       }
     }
 
-
-    console.log('this.props.cards: ', this.props.cards)
-
     if (this.props.cards.length > 0) {
       for (let i = 0; i < this.props.cards.length; i++)
       {
@@ -59,6 +54,7 @@ class AvailableCards extends Component {
         {!this.state.isSelected &&
           <div>
             {availableCardsArray.length > 0 ? availableCardsArray : 'No cards available'}
+            <button onClick={() => this.props.back()}>back</button>
             <button onClick={() => this.seeDetailsButton()}>see details</button>
           </div>
         }
@@ -83,7 +79,8 @@ AvailableCards.propTypes = {
       creditAvailable: PropTypes.number,
       id: PropTypes.number,
     })
-  ).isRequired
+  ).isRequired,
+  back: PropTypes.func.isRequired
 };
 
 export default AvailableCards;

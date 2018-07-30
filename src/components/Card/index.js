@@ -8,22 +8,22 @@ class Card extends Component {
   render() {
     console.log('this.props', this.props)
     return (
-      <div class="card" onclick={()=>{console.log('yo')}}>
-        <header class="card-header">
-          <p class="card-header-title">
+      <div className="card" onClick={()=>{console.log('yo')}}>
+        <header className="card-header">
+          <p className="card-header-title">
             {this.props.card.name}
           </p>
         </header>
-        <div class="card-content">
-          <div class="content">
+        <div className="card-content">
+          <div className="content">
             {this.props.card.description}
           </div>
         </div>
-        <footer class="card-footer">
-          <div class="card-footer-item">APR: {this.props.card.apr}</div>
-          <div class="card-footer-item">APR: {this.props.card.balanceDurationMonths}</div>
-          <div class="card-footer-item">APR: {this.props.card.purchaseDurationMonths}</div>
-          <div class="card-footer-item">APR: {this.props.card.creditAvailable}</div>
+        <footer className="card-footer">
+          <div className="card-footer-item">APR: {this.props.card.apr}</div>
+          <div className="card-footer-item">APR: {this.props.card.balanceDurationMonths}</div>
+          <div className="card-footer-item">APR: {this.props.card.purchaseDurationMonths}</div>
+          <div className="card-footer-item">APR: {this.props.card.creditAvailable}</div>
         </footer>
       </div>
     );
