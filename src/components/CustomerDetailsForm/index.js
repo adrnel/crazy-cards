@@ -69,6 +69,12 @@ class CustomerDetailsForm extends Component {
               <input className="input" type="email" placeholder="House Number"/>
             </div>
           </div>
+          <div className="field">
+            <label className="label">Post Code</label>
+            <div className="control">
+              <input className="input" type="email" placeholder="Post Code"/>
+            </div>
+          </div>
         </div>
         <footer className="card-footer">
           <p className="card-footer-item apply-button">

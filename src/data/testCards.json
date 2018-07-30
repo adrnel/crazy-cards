@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Student Life Card",
+    "description": "The Student Life credit card is only available to customers with an employment status of Student.",
+    "apr": 18.9,
+    "balanceDurationMonths": 0,
+    "purchaseDurationMonths": 6,
+    "creditAvailable": 1200,
+    "id": 1
+  },
+  {
+    "name": "Anywhere Card",
+    "description": "The anywhere card is available to anyone anywhere.",
+    "apr": 33.9,
+    "balanceDurationMonths": 0,
+    "purchaseDurationMonths": 0,
+    "creditAvailable": 300,
+    "id": 2
+  },
+  {
+    "name": "Liquid Card",
+    "description": "The Liquid card is a card available to customers who have an income of more than £16000.",
+    "apr": 33.9,
+    "balanceDurationMonths": 12,
+    "purchaseDurationMonths": 6,
+    "creditAvailable": 3000,
+    "id": 3
+  }
+]
