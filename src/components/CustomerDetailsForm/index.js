@@ -74,7 +74,7 @@ class CustomerDetailsForm extends Component {
           <div className="field">
             <label className="label">Date of Birth</label>
             <div className="control">
-              <input className="input" type="date" placeholder="Annual Income" onChange={
+              <input className="input" type="date" onChange={
                 (e) => {
                   const value = e.target.value;
                   this.setState(() => {
@@ -86,7 +86,7 @@ class CustomerDetailsForm extends Component {
           <div className="field">
             <label className="label">Annual Income</label>
             <div className="control">
-              <input className="input" type="email" placeholder="Annual Income" onChange={
+              <input className="input" placeholder="Annual Income" type="number"  onChange={
                 (e) => {
                   const value = e.target.value;
                   this.setState(() => {
@@ -139,7 +139,12 @@ class CustomerDetailsForm extends Component {
             </div>
           </div>
         </div>
-        <footer className="card-footer" onClick={() => {this.props.proceed()}}>
+        <footer className="card-footer" onClick={
+          () => {
+            this.props.setUserInformation(this.state);
+            this.props.proceed();
+          }
+        }>
           <p className="card-footer-item apply-button">
             <span>
               Apply
@@ -152,7 +157,8 @@ class CustomerDetailsForm extends Component {
 }
 
 CustomerDetailsForm.propTypes = {
-  proceed: PropTypes.func.isRequired
+  proceed: PropTypes.func.isRequired,
+  setUserInformation: PropTypes.func.isRequired,
 }
 
 export default CustomerDetailsForm;

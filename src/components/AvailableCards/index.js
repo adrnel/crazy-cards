@@ -10,7 +10,23 @@ class AvailableCards extends Component {
       selectedCards: [],
       isMoreDetails: false,
       totalCredit: 0,
+      filteredUserCards: this.filterUserCards(this.props.cards)
     };
+  }
+
+  filterUserCards(cards){
+    let filteredCards = [...cards];
+
+    // filter out Student cards for non-students
+    if (this.props.userInformation.employmentStatus !== 'Student'){
+      filteredCards = filteredCards.filter((card) => card.id !== 1)
+    }
+
+    // filter out Liquid cards for income below £16000
+    if (this.props.userInformation.annualIncome <= 16000){
+      filteredCards = filteredCards.filter((card) => card.id !== 3)
+    }
+    return filteredCards
   }
 
   seeDetailsButton() {
@@ -46,11 +62,11 @@ class AvailableCards extends Component {
 
     // build the component for the array of cards from which the user can choose which ones they wish to see more of
     const allCardsArray = [];
-    if (this.props.cards.length > 0) {
-      for (let i = 0; i < this.props.cards.length; i++)
+    if (this.state.filteredUserCards.length > 0) {
+      for (let i = 0; i < this.state.filteredUserCards.length; i++)
       {
         allCardsArray.push(
-          <div key={this.props.cards[i].id}>
+          <div key={this.state.filteredUserCards[i].id}>
             <label className="checkbox">
               <input
                 type="checkbox"
@@ -59,11 +75,11 @@ class AvailableCards extends Component {
                 onChange={
                   (e) => {
                     const checked = e.currentTarget.checked;
-                    this.toggleCheckBox(checked, this.props.cards[i])
+                    this.toggleCheckBox(checked, this.state.filteredUserCards[i])
                   }
                 }
               />
-                {this.props.cards[i].name}
+                {this.state.filteredUserCards[i].name}
             </label>
           </div>
         )
@@ -132,7 +148,17 @@ AvailableCards.propTypes = {
       id: PropTypes.number,
     })
   ).isRequired,
-  back: PropTypes.func.isRequired
+  back: PropTypes.func.isRequired,
+  userInformation: PropTypes.shape({
+    Title: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    dateOfBirth: PropTypes.string,
+    annualIncome: PropTypes.string,
+    employmentStatus: PropTypes.string,
+    houseNumber: PropTypes.string,
+    postCode: PropTypes.string
+  }).isRequired
 };
 
 export default AvailableCards;

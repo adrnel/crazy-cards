@@ -10,10 +10,12 @@ class App extends Component {
     super(props);
     this.state = {
       showResults: false,
-      cards: {}
+      cards: {},
+      userInformation: {},
     };
     this.proceed = this.proceed.bind(this);
     this.back = this.back.bind(this);
+    this.setUserInformation = this.setUserInformation.bind(this);
   }
 
   proceed() {
@@ -30,11 +32,17 @@ class App extends Component {
     })
   }
 
+  setUserInformation(userInformation) {
+    this.setState(() => {
+      return {userInformation: userInformation}
+    }, () => {console.log('App.js state: ', this.state)})
+  }
+
   render() {
     return (
       <div className="App">
-        {!this.state.showResults && <CustomerDetailsForm proceed={this.proceed}/>}
-        {this.state.showResults && <AvailableCards cards={this.state.cards} back={this.back}/>}
+        {!this.state.showResults && <CustomerDetailsForm proceed={this.proceed} setUserInformation={this.setUserInformation}/>}
+        {this.state.showResults && <AvailableCards cards={this.state.cards} back={this.back} userInformation={this.state.userInformation}/>}
       </div>
     );
   }
