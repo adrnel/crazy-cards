@@ -8,7 +8,8 @@ class AvailableCards extends Component {
     super(props);
     this.state = {
       selectedCards: [],
-      isSelected: false
+      isSelected: false,
+      totalCredit: 0,
     };
   }
 
@@ -33,9 +34,9 @@ class AvailableCards extends Component {
       {
         availableCardsArray.push(
           <div key={this.props.cards[i].id}>
-            <label className="radio">
-              <input type="checkbox" name="question"/>
-              I have a bike
+            <label className="checkbox">
+              <input type="checkbox" name="question" className="checkbox-box"/>
+                {this.props.cards[i].name}
             </label>
           </div>
         )
@@ -52,17 +53,30 @@ class AvailableCards extends Component {
     return (
       <div>
         {!this.state.isSelected &&
-          <div>
+        <div className="card">
+          <div className="card-content available-cards">
+            <p className="title">
+              Your Available Cards
+            </p>
+            <p className="subtitle">
+              Select the cards you wish to see additional details of
+            </p>
             {availableCardsArray.length > 0 ? availableCardsArray : 'No cards available'}
-            <button onClick={() => this.props.back()}>back</button>
-            <button onClick={() => this.seeDetailsButton()}>see details</button>
+            <button className="button is-warning" onClick={() => this.props.back()}>back</button>
+            <button className="button is-info" onClick={() => this.seeDetailsButton()}>see details</button>
           </div>
+        </div>
         }
         {this.state.isSelected &&
-          <div>
+        <div className="card">
+          <div className="card-content card-details">
+            <p className="title">
+              Total credit available £{this.state.totalCredit}
+            </p>
             {cardsArray.length > 0 ? cardsArray : 'No cards available'}
-            <button onClick={() => this.back()}>back</button>
-          </div>}
+            <button className="button is-warning" onClick={() => this.back()}>back</button>
+          </div>
+        </div>}
       </div>
     );
   }

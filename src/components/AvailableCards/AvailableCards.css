@@ -1,0 +1,38 @@
+.card {
+    margin-top: 5px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.available-cards .button {
+    border-radius: 20px;
+    margin: 20px 10px 10px 10px;
+}
+
+.available-cards .checkbox-box {
+    position: relative;
+    bottom: 4px;
+    margin-right: 7px;
+}
+
+.available-cards {
+    background-color: #f5fcfc;
+    border: none;
+    padding: 20px;
+}
+
+.card-content.card-details {
+    background-color: #f5fcfc;
+    border: none;
+    padding: 20px;
+}
+
+.card-details .button {
+    border-radius: 20px;
+    margin: 20px 10px 10px 10px;
+}
+.available-cards .checkbox{
+    font-size: 26px;
+    margin: 6px 0;
+}

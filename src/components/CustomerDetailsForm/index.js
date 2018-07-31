@@ -21,7 +21,7 @@ class CustomerDetailsForm extends Component {
   render() {
     return (
       <div className="card">
-        <div className="card-content card-application">
+        <div className="card-content customer-details">
           <p className="title">
             Card Application
           </p>

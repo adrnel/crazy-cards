@@ -1,6 +1,6 @@
 import testCards from '../data/testCards.json';
 
-function delay(timeout = 1000) {
+function delay(timeout = 10) {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve();

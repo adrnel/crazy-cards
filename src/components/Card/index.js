@@ -8,7 +8,7 @@ class Card extends Component {
   render() {
     console.log('this.props', this.props)
     return (
-      <div className="card" onClick={()=>{console.log('yo')}}>
+      <div className="card detailed-card" onClick={()=>{console.log('yo')}}>
         <header className="card-header">
           <p className="card-header-title">
             {this.props.card.name}
