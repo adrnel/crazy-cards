@@ -19,12 +19,12 @@ class Card extends Component {
             {this.props.card.description}
           </div>
         </div>
-        <footer className="card-footer">
-          <div className="card-footer-item">APR: {this.props.card.apr}</div>
-          <div className="card-footer-item">APR: {this.props.card.balanceDurationMonths}</div>
-          <div className="card-footer-item">APR: {this.props.card.purchaseDurationMonths}</div>
-          <div className="card-footer-item">APR: {this.props.card.creditAvailable}</div>
-        </footer>
+        <div className="info">
+          <div>APR: {this.props.card.apr}%</div>
+          <div>Balance Transfer Offer Duration: {this.props.card.balanceDurationMonths} months</div>
+          <div>Purchase Offer Duration: {this.props.card.purchaseDurationMonths} months</div>
+          <div>Credit Available: £{this.props.card.creditAvailable} months</div>
+        </div>
       </div>
     );
   }

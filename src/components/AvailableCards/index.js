@@ -44,8 +44,6 @@ class AvailableCards extends Component {
 
   render() {
 
-
-
     // build the component for the array of cards from which the user can choose which ones they wish to see more of
     const allCardsArray = [];
     if (this.props.cards.length > 0) {
@@ -74,40 +72,49 @@ class AvailableCards extends Component {
 
     // build the component for the array of selected cards showing their additional details
     const availableCardsArray = [];
+    let totalCredit = 0;
     if (this.state.selectedCards.length > 0) {
       for (let i = 0; i < this.state.selectedCards.length; i++)
       {
-        availableCardsArray.push(<Card card={this.state.selectedCards[i]} key={this.state.selectedCards[i].id} />)
+        availableCardsArray.push(<Card card={this.state.selectedCards[i]} key={this.state.selectedCards[i].id} />);
+        totalCredit += this.state.selectedCards[i].creditAvailable
       }
     }
 
     return (
       <div>
         {!this.state.isMoreDetails &&
-        <div className="card">
-          <div className="card-content available-cards">
-            <p className="title">
-              Your Available Cards
-            </p>
-            <p className="subtitle">
-              Select the cards you wish to see additional details of
-            </p>
-            {allCardsArray.length > 0 ? allCardsArray : 'No cards available'}
-            <button className="button is-warning" onClick={() => this.props.back()}>back</button>
-            <button className="button is-info" onClick={() => this.seeDetailsButton()}>see details</button>
+          <div className="card">
+            <div className="card-content available-cards">
+              <p className="title">
+                Your Available Cards
+              </p>
+              <p className="subtitle">
+                Select the cards you wish to see additional details of
+              </p>
+              {allCardsArray.length > 0 ? allCardsArray : 'No cards available'}
+              <button className="button is-warning" onClick={() => this.props.back()}>back</button>
+              <button
+                disabled={availableCardsArray.length === 0}
+                className="button is-info"
+                onClick={() => this.seeDetailsButton()}
+              >
+                see details
+              </button>
+            </div>
           </div>
-        </div>
         }
         {this.state.isMoreDetails &&
-        <div className="card">
-          <div className="card-content card-details">
-            <p className="title">
-              Total credit available £{this.state.totalCredit}
-            </p>
-            {availableCardsArray.length > 0 ? availableCardsArray : 'No cards available'}
-            <button className="button is-warning" onClick={() => this.back()}>back</button>
+          <div className="card">
+            <div className="card-content card-details">
+              <p className="title">
+                Total credit available £{totalCredit}
+              </p>
+              {availableCardsArray.length > 0 ? availableCardsArray : 'No cards available'}
+              <button className="button is-warning" onClick={() => this.back()}>back</button>
+            </div>
           </div>
-        </div>}
+        }
       </div>
     );
   }

@@ -5,3 +5,7 @@
 .detailed-card {
     background-color: #f2fff3;
 }
+
+.detailed-card .info {
+    padding-bottom: 10px;
+}
