@@ -6,3 +6,9 @@ This project was bootstrapped using [Create React App](./CRA_README.md), and you
 npm install
 npm start
 ```
+
+To run the unit tests, uses the following command:
+
+```
+npm test
+```

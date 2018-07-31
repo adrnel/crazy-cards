@@ -28,7 +28,6 @@ class Card extends Component {
   }
 }
 
-
 Card.propTypes = PropTypes.shape({
   card: PropTypes.shape({
     name: PropTypes.string,

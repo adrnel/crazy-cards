@@ -1,10 +1,6 @@
 import React from 'react';
-import Adapter from 'enzyme-adapter-react-16';
-import Enzyme from 'enzyme';
 import {shallow} from 'enzyme';
 import Card from './';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 const cardProps = {
   "name": "Student Life Card",
