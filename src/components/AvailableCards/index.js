@@ -59,6 +59,11 @@ class AvailableCards extends Component {
   }
 
   render() {
+    // so I've kinda squashed 2 components into one here as I initially assumed I
+    // would only have to show all the available cards when with all the information
+    // to the user when they fill out the form, didn't realise they was another step
+    // after where they would select the cards they want to see additional information for
+    // if I had the time I'd refactor this into 2 separate components
 
     // build the component for the array of cards from which the user can choose which ones they wish to see more of
     const allCardsArray = [];
@@ -66,7 +71,7 @@ class AvailableCards extends Component {
       for (let i = 0; i < this.state.filteredUserCards.length; i++)
       {
         allCardsArray.push(
-          <div key={this.state.filteredUserCards[i].id}>
+          <div className="available-card" key={this.state.filteredUserCards[i].id}>
             <label className="checkbox">
               <input
                 type="checkbox"
@@ -108,7 +113,7 @@ class AvailableCards extends Component {
               <p className="subtitle">
                 Select the cards you wish to see additional details of
               </p>
-              {allCardsArray.length > 0 ? allCardsArray : 'No cards available'}
+              <span className="available-card-check">{allCardsArray.length > 0 ? allCardsArray : 'No cards available'}</span>
               <button className="button is-warning" onClick={() => this.props.back()}>back</button>
               <button
                 disabled={availableCardsArray.length === 0}
@@ -150,7 +155,7 @@ AvailableCards.propTypes = {
   ).isRequired,
   back: PropTypes.func.isRequired,
   userInformation: PropTypes.shape({
-    Title: PropTypes.string,
+    title: PropTypes.string,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     dateOfBirth: PropTypes.string,

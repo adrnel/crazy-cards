@@ -7,7 +7,7 @@ class CustomerDetailsForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Title: '',
+      title: '',
       firstName: '',
       lastName: '',
       dateOfBirth: '',
@@ -36,7 +36,7 @@ class CustomerDetailsForm extends Component {
                   (e) => {
                     const value = e.target.value;
                     this.setState(() => {
-                      return {Title: value}
+                      return {title: value}
                     },() => {console.log('this.state', this.state)})}
                 }>
                   <option>Mr</option>
