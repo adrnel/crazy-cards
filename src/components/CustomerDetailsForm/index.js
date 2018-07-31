@@ -14,7 +14,7 @@ class CustomerDetailsForm extends Component {
       annualIncome: '',
       employmentStatus: '',
       houseNumber: '',
-      postCode: '',
+      postCode: ''
     };
   }
 
