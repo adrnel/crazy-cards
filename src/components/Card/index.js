@@ -4,26 +4,24 @@ import './Card.css';
 
 class Card extends Component {
 
-
   render() {
-    console.log('this.props', this.props)
     return (
-      <div className="card detailed-card" onClick={()=>{console.log('yo')}}>
+      <div className="card detailed-card">
         <header className="card-header">
           <p className="card-header-title">
             {this.props.card.name}
           </p>
         </header>
         <div className="card-content">
-          <div className="content">
+          <div className="content description">
             {this.props.card.description}
           </div>
         </div>
         <div className="info">
-          <div>APR: {this.props.card.apr}%</div>
-          <div>Balance Transfer Offer Duration: {this.props.card.balanceDurationMonths} months</div>
-          <div>Purchase Offer Duration: {this.props.card.purchaseDurationMonths} months</div>
-          <div>Credit Available: £{this.props.card.creditAvailable} months</div>
+          <div className="content apr">APR: {this.props.card.apr}%</div>
+          <div className="content balance">Balance Transfer Offer Duration: {this.props.card.balanceDurationMonths} months</div>
+          <div className="content purchase">Purchase Offer Duration: {this.props.card.purchaseDurationMonths} months</div>
+          <div className="content credit">Credit Available: £{this.props.card.creditAvailable}</div>
         </div>
       </div>
     );
@@ -32,13 +30,15 @@ class Card extends Component {
 
 
 Card.propTypes = PropTypes.shape({
-  name: PropTypes.string,
-  description: PropTypes.string,
-  apr: PropTypes.number,
-  balanceDurationMonths: PropTypes.number,
-  purchaseDurationMonths: PropTypes.number,
-  creditAvailable: PropTypes.number,
-  id: PropTypes.number,
+  card: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+    apr: PropTypes.number,
+    balanceDurationMonths: PropTypes.number,
+    purchaseDurationMonths: PropTypes.number,
+    creditAvailable: PropTypes.number,
+    id: PropTypes.number,
+  }).isRequired
 }).isRequired;
 
 export default Card;
