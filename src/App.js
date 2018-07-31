@@ -22,7 +22,7 @@ class App extends Component {
     // get request would actually look something like: axios.get(`https://crazycards.com/cards/${userid}`)
     getCards()
       .then(res => {
-        this.setState({cards: res.data.cards, showResults: true},() => {console.log('this.state', this.state)});
+        this.setState({cards: res.data.cards, showResults: true});
       })
   }
 
@@ -35,7 +35,7 @@ class App extends Component {
   setUserInformation(userInformation) {
     this.setState(() => {
       return {userInformation: userInformation}
-    }, () => {console.log('App.js state: ', this.state)})
+    })
   }
 
   render() {

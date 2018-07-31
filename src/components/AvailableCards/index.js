@@ -47,14 +47,14 @@ class AvailableCards extends Component {
         const newSelectedCards = [ ...prevState.selectedCards ];
         newSelectedCards.push(newCard);
         return {selectedCards: newSelectedCards}
-      }, () => console.log('this.state123: ', this.state))
+      })
     } else {
       this.setState((prevState) => {
         const newSelectedCards = prevState.selectedCards.filter(function( oldCard ) {
           return oldCard.id !== newCard.id;
         });
         return {selectedCards: newSelectedCards}
-      }, () => console.log('this.state123: ', this.state))
+      })
     }
   }
 
@@ -62,8 +62,8 @@ class AvailableCards extends Component {
     // so I've kinda squashed 2 components into one here as I initially assumed I
     // would only have to show all the available cards when with all the information
     // to the user when they fill out the form, didn't realise they was another step
-    // after where they would select the cards they want to see additional information for
-    // if I had the time I'd refactor this into 2 separate components
+    // after where they would select the cards they want to see additional information for.
+    // If I had the time I'd refactor this into 2 separate components
 
     // build the component for the array of cards from which the user can choose which ones they wish to see more of
     const allCardsArray = [];

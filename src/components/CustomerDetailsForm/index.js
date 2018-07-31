@@ -37,7 +37,7 @@ class CustomerDetailsForm extends Component {
                     const value = e.target.value;
                     this.setState(() => {
                       return {title: value}
-                    },() => {console.log('this.state', this.state)})}
+                    })}
                 }>
                   <option>Mr</option>
                   <option>Mrs</option>
@@ -55,7 +55,7 @@ class CustomerDetailsForm extends Component {
                   const value = e.target.value;
                   this.setState(() => {
                   return {firstName: value}
-                },() => {console.log('this.state', this.state)})}
+                })}
               }/>
             </div>
           </div>
@@ -67,7 +67,7 @@ class CustomerDetailsForm extends Component {
                   const value = e.target.value;
                   this.setState(() => {
                     return {lastName: value}
-                  },() => {console.log('this.state', this.state)})}
+                  })}
               }/>
             </div>
           </div>
@@ -79,7 +79,7 @@ class CustomerDetailsForm extends Component {
                   const value = e.target.value;
                   this.setState(() => {
                     return {dateOfBirth: value}
-                  },() => {console.log('this.state', this.state)})}
+                  })}
               }/>
             </div>
           </div>
@@ -91,7 +91,7 @@ class CustomerDetailsForm extends Component {
                   const value = e.target.value;
                   this.setState(() => {
                     return {annualIncome: value}
-                  },() => {console.log('this.state', this.state)})}
+                  })}
               }/>
             </div>
           </div>
@@ -104,7 +104,7 @@ class CustomerDetailsForm extends Component {
                     const value = e.target.value;
                     this.setState(() => {
                       return {employmentStatus: value}
-                    },() => {console.log('this.state', this.state)})}
+                    })}
                 }>
                   <option>Full Time Employment</option>
                   <option>Part Time Employed</option>
@@ -122,7 +122,7 @@ class CustomerDetailsForm extends Component {
                   const value = e.target.value;
                   this.setState(() => {
                     return {houseNumber: value}
-                  },() => {console.log('this.state', this.state)})}
+                  })}
               }/>
             </div>
           </div>
@@ -134,7 +134,7 @@ class CustomerDetailsForm extends Component {
                   const value = e.target.value;
                   this.setState(() => {
                     return {postCode: value}
-                  },() => {console.log('this.state', this.state)})}
+                  })}
               }/>
             </div>
           </div>
